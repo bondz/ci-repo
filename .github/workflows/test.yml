@@ -1,0 +1,23 @@
+name: Test Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GLOBAL_VAR: "I am global"
+      MY_VAR: "I am a var"
+      AWS_SECRET: "My AWS secrets"
+    steps:
+      - name: Show global var
+        run: echo "$GLOBAL_VAR"
+
+      - name: Clear custom env
+        env: {}
+        run: env  # vars shouldn't appear here
+
+      - name: echo env
+        run: env
