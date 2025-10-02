@@ -16,7 +16,7 @@ jobs:
         run: echo "$GLOBAL_VAR"
 
       - name: Show lowercase owner
-        run: echo ghcr.io/${GITHUB_REPOSITORY_OWNWER,,}
+        run: echo ghcr.io/${GITHUB_REPOSITORY_OWNER,,}
         
       - name: Clear custom env
         env: {}
