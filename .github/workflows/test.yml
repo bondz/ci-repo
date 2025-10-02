@@ -16,7 +16,7 @@ jobs:
         run: echo "$GLOBAL_VAR"
 
       - name: Show lowercase owner
-        run: echo ${{ toLower(github.repository_owner) }}
+        run: echo ${GITHUB_REPOSITORY,,}
         
       - name: Clear custom env
         env: {}
